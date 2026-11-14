@@ -23,7 +23,7 @@ function sortBy(list, key, desc) {
 // search : 배열, 검색어 ⇒ 제목에 검색어가 든 새 배열(대소문자, 앞뒤 공백 무시)
 function search(list, keyword) {
   const k = keyword.trim().toLowerCase();
-  return list.filter(m => m.title.toLowerCase().includes(k));
+  return list.filter((m) => m.title.toLowerCase().includes(k));
 }
 
 // renderCards : 영화 배열 ⇒ 보드에 카드 생성(반환값 없음)

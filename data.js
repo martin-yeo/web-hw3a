@@ -16,11 +16,27 @@
 // 줄거리 overview는 Step 1에서 영화마다 더합니다.
 
 const movies = [
-  // 형식 예시 2건 : 내 값으로 바꾸고, 같은 형식으로 8건을 더해 10건(내 영화 5편, 박스오피스 1~5위)
+  // TODO : 형식 예시 2건을 자신의 값으로 바꾸고, 같은 형식으로 8건을 더해 10건(내 영화 5편, 박스오피스 1~5위)
   // 제목이 같은 영화를 두 번 넣지 않습니다(Step 1부터 제목으로 영화를 찾기 때문입니다)
   // poster는 poster_path 글자(예: "/abc123.jpg"), 포스터가 없으면 따옴표 없이 null
-  { title: "인터스텔라", year: 2014, date: "2014-11-06", rating: 8.4,
-    audience: 0, poster: null, type: "mine", rank: null },
-  { title: "박스오피스 1위 제목", year: 2026, date: "2026-09-30", rating: 7.1,
-    audience: 2345678, poster: null, type: "boxoffice", rank: 1 },
+  {
+    title: "인터스텔라",
+    year: 2014,
+    date: "2014-11-06",
+    rating: 8.4,
+    audience: 0,
+    poster: null,
+    type: "mine",
+    rank: null,
+  },
+  {
+    title: "박스오피스 1위 제목",
+    year: 2026,
+    date: "2026-09-30",
+    rating: 7.1,
+    audience: 2345678,
+    poster: null,
+    type: "boxoffice",
+    rank: 1,
+  },
 ];
