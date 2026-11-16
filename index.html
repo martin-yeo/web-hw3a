@@ -1,83 +1,68 @@
-<!doctype html>
+<!DOCTYPE html>
 <!-- 실습과제 #3 출발선 키트(교수 제공, https://github.com/martin-yeo/web-hw3a)
-     Step 0이 끝난 상태입니다. 사이트 이름(h1)과 히어로 문구(h2, p)는 자신의 것으로 바꿔도 됩니다. -->
+     Step 0이 끝난 상태입니다. 사이트 이름(h1)과 히어로 문구(h2, p)는 내 것으로 바꿔도 됩니다. -->
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>내 영화 보드</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;700&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="top">
-      <h1>내 영화 보드</h1>
-      <nav>
-        <ul>
-          <li><a href="#board">보드</a></li>
-          <li><a href="#credits">출처</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 영화 보드</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>내 영화 보드</h1>
+    <nav>
+      <ul>
+        <li><a href="#board">보드</a></li>
+        <li><a href="#credits">출처</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- 히어로 : 지금은 배경 그림 없이 색 그러데이션입니다.
+  <!-- 히어로 : 지금은 배경 그림 없이 색 그러데이션입니다.
        TMDB 배경 그림을 쓰려면 style.css의 .hero 위 주석대로 backdrop_path 주소를 넣습니다(키는 쓰지 않음) -->
-    <section class="hero">
-      <h2>오늘 뭐 볼까</h2>
-      <p>
-        내가 아끼는 영화 다섯 편과 어제 극장가의 다섯 편을 한 보드에 걸었습니다.
-      </p>
-    </section>
+  <section class="hero">
+    <h2>오늘 뭐 볼까</h2>
+    <p>내가 아끼는 영화 다섯 편과 어제 극장가의 다섯 편을 한 보드에 걸었습니다.</p>
+  </section>
 
-    <main>
-      <!-- <main> 안 : 실습과제 #3 Step 0의 코드 그대로(툴바, 보드, 빈 결과 문구, 상세 상자) -->
-      <div class="toolbar">
-        <input id="q" type="search" placeholder="영화 제목 검색" />
-        <fieldset id="typeFilter">
-          <legend>보기</legend>
-          <label
-            ><input type="radio" name="type" value="all" checked /> 전체</label
-          >
-          <label><input type="radio" name="type" value="mine" /> 내 영화</label>
-          <label
-            ><input type="radio" name="type" value="boxoffice" />
-            박스오피스</label
-          >
-        </fieldset>
-        <label for="sort">정렬</label>
-        <select id="sort">
-          <option value="rating">평점순</option>
-          <option value="year">최신 개봉순</option>
-          <option value="title">제목 가나다순</option>
-        </select>
-        <p><span id="count"></span>, 찜 <span id="likeCount">0</span>편</p>
-      </div>
-      <section class="board" id="board"></section>
-      <p class="state-empty">조건에 맞는 영화가 없습니다.</p>
-      <dialog id="detail">
-        <div id="detailBody"></div>
-        <button type="button" id="closeDetail">닫기</button>
-      </dialog>
-    </main>
+  <main>
+    <!-- <main> 안 : 실습과제 #3 Step 0의 코드 그대로(툴바, 보드, 빈 결과 문구, 상세 상자) -->
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="영화 제목 검색">
+      <fieldset id="typeFilter">
+        <legend>보기</legend>
+        <label><input type="radio" name="type" value="all" checked> 전체</label>
+        <label><input type="radio" name="type" value="mine"> 내 영화</label>
+        <label><input type="radio" name="type" value="boxoffice"> 박스오피스</label>
+      </fieldset>
+      <label for="sort">정렬</label>
+      <select id="sort">
+        <option value="rating">평점순</option>
+        <option value="year">최신 개봉순</option>
+        <option value="title">제목 가나다순</option>
+      </select>
+      <p><span id="count"></span>, 찜 <span id="likeCount">0</span>편</p>
+    </div>
+    <section class="board" id="board"></section>
+    <p class="state-empty">조건에 맞는 영화가 없습니다.</p>
+    <dialog id="detail">
+      <div id="detailBody"></div>
+      <button type="button" id="closeDetail">닫기</button>
+    </dialog>
+  </main>
 
-    <footer id="credits">
-      <p>
-        이 사이트는 TMDB API를 사용하지만 TMDB의 보증이나 인증을 받지
-        않았습니다. This product uses the TMDB API but is not endorsed or
-        certified by TMDB.
-      </p>
-      <p>포스터와 영화 정보: TMDB (https://www.themoviedb.org)</p>
-      <!-- 기준일 YYYY-MM-DD는 내 data.js 맨 위 주석에 적은 KOBIS 기준일로 바꿉니다 -->
-      <p>
-        박스오피스 데이터: 영화진흥위원회 영화관입장권통합전산망(KOBIS), 기준일
-        YYYY-MM-DD
-      </p>
-    </footer>
-    <script src="data.js"></script>
-    <script src="app.js"></script>
-  </body>
+  <footer id="credits">
+    <p>이 사이트는 TMDB API를 사용하지만 TMDB의 보증이나 인증을 받지 않았습니다.
+       This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    <p>포스터와 영화 정보: TMDB (https://www.themoviedb.org)</p>
+    <!-- TODO Step 0: 아래 기준일 YYYY-MM-DD를 내 data.js 맨 위 주석에 적은 KOBIS 기준일로 바꾸기 -->
+    <p>박스오피스 데이터: 영화진흥위원회 영화관입장권통합전산망(KOBIS), 기준일 YYYY-MM-DD</p>
+  </footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>

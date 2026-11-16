@@ -1,7 +1,7 @@
 // data.js : 실습과제 #3 출발선 키트(교수 제공, https://github.com/martin-yeo/web-hw3a) / 이름(학번)
 // 내 영화 5편(TMDB) + 박스오피스 5편(KOBIS, 기준일 YYYY-MM-DD) = 10건
 //
-// 값 찾는 법 : API 키는 주소창에서만 씁니다. 이 파일에는 키를 적지 않습니다(저장소가 공개이기 때문입니다).
+// 값 찾는 법 : API 키는 주소창에서만 씁니다. 이 파일에는 키를 적지 않습니다(본 과제에는 키가 필요 없음).
 // 1. 내 영화 5편 : 주소창에 https://api.themoviedb.org/3/search/movie?api_key=KEY&language=ko-KR&query=영화제목
 //    KEY는 내 TMDB 키. 응답이 한 줄로 보이면 "Pretty-print" 체크 ⇒ results 첫 항목(필드 표는 6주차 안내문)
 //    title ⇒ title, release_date ⇒ date(앞 4자리는 year, 숫자), vote_average ⇒ rating(숫자, 소수 첫째 자리까지),
@@ -16,27 +16,12 @@
 // 줄거리 overview는 Step 1에서 영화마다 더합니다.
 
 const movies = [
-  // TODO : 형식 예시 2건을 자신의 값으로 바꾸고, 같은 형식으로 8건을 더해 10건(내 영화 5편, 박스오피스 1~5위)
+  // TODO Step 0: 형식 예시 2건을 내 값으로 바꾸고, 같은 형식으로 8건을 더해 10건(내 영화 5편, 박스오피스 1~5위)
+  // TODO Step 1: 영화마다 overview(줄거리 첫 1~2문장, 큰따옴표는 \", 비면 "줄거리 정보가 없습니다.") 더하기
   // 제목이 같은 영화를 두 번 넣지 않습니다(Step 1부터 제목으로 영화를 찾기 때문입니다)
   // poster는 poster_path 글자(예: "/abc123.jpg"), 포스터가 없으면 따옴표 없이 null
-  {
-    title: "인터스텔라",
-    year: 2014,
-    date: "2014-11-06",
-    rating: 8.4,
-    audience: 0,
-    poster: null,
-    type: "mine",
-    rank: null,
-  },
-  {
-    title: "박스오피스 1위 제목",
-    year: 2026,
-    date: "2026-09-30",
-    rating: 7.1,
-    audience: 2345678,
-    poster: null,
-    type: "boxoffice",
-    rank: 1,
-  },
+  { title: "인터스텔라", year: 2014, date: "2014-11-06", rating: 8.4,
+    audience: 0, poster: null, type: "mine", rank: null },
+  { title: "박스오피스 1위 제목", year: 2026, date: "2026-09-30", rating: 7.1,
+    audience: 2345678, poster: null, type: "boxoffice", rank: 1 },
 ];
